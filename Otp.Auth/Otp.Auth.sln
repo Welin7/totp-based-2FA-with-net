@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36429.23 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Otp.Auth", "Otp.Auth.csproj", "{CC297D08-FD07-4D0A-994F-E7ADEE67DE05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC297D08-FD07-4D0A-994F-E7ADEE67DE05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC297D08-FD07-4D0A-994F-E7ADEE67DE05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC297D08-FD07-4D0A-994F-E7ADEE67DE05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC297D08-FD07-4D0A-994F-E7ADEE67DE05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3402FF11-8FF6-4626-B62F-7D099594224C}
+	EndGlobalSection
+EndGlobal
