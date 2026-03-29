@@ -1,3 +1,4 @@
+using Otp.Auth.Dtos;
 using OtpNet;
 using QRCoder;
 
@@ -27,9 +28,21 @@ app.MapGet("otp/qrcode", () =>
     using var qrGenerator = new QRCodeGenerator();
     using var qrCodeData = qrGenerator.CreateQrCode(otpUri, QRCodeGenerator.ECCLevel.Q);
     using var qrCode = new PngByteQRCode(qrCodeData);
-    byte[] qrCodeImage = qrCode.GetGraphic(20);
+    byte[] qrCodeImage = qrCode.GetGraphic(10);
 
     return Results.File(qrCodeImage, "image/png");
+});
+
+app.MapPost("otp/validate", (ValidateOtpRequestDto request) =>
+{
+    var totp = new Totp(secretKey);
+    
+    bool isValid = totp.VerifyTotp(
+        request.Code, 
+        out var timeStepMatched, 
+        VerificationWindow.RfcSpecifiedNetworkDelay);
+    
+    return isValid ? Results.Ok("Código OTP válido") : Results.BadRequest("Código OTP inválido");
 });
 
 app.Run();
